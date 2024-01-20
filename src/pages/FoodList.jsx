@@ -3,6 +3,7 @@ import { END_POINT } from "../utils/Constants";
 import useFeatchData from "../hook/useFeatchData";
 import { StarIcon } from "@heroicons/react/24/outline";
 import OfferSection from "../components/OfferSection";
+import FoodMenu from "../components/FoodMenu";
 const FoodList = () => {
   const { foodData } = useFeatchData(END_POINT.LUNCH_BOX);
 
@@ -14,8 +15,6 @@ const FoodList = () => {
   const HotelInfo = cards[0]?.card?.card?.info;
   const offers = cards[1]?.card?.card?.gridElements.infoWithStyle.offers;
   const accordionData = cards[2].groupedCard.cardGroupMap.REGULAR.cards;
-
-  console.log(offers);
 
   return (
     <div>
@@ -49,6 +48,13 @@ const FoodList = () => {
       </div>
 
       <OfferSection offer={offers} />
+
+      {accordionData.map((menu) => (
+        <FoodMenu
+          accordionData={menu.card.card.itemCards}
+          title={menu.card.card.title}
+        />
+      ))}
     </div>
   );
 };
