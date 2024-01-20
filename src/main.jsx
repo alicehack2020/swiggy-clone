@@ -31,6 +31,10 @@ const AppRouter = createBrowserRouter([
         path: "foodsearch",
         element: <SearchFood />,
       },
+      {
+        path: "*",
+        element: <ErrorPage />,
+      },
     ],
   },
 ]);

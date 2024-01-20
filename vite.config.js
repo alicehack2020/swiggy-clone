@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  server: {
+    watch: {},
+    hmr: {
+      overlay: true,
+    },
+  },
+  plugins: [
+    react({
+      include: "**/*.jsx", // Adjust this based on your project's file extensions
+    }),
+  ],
+});
