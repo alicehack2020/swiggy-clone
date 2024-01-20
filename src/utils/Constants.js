@@ -5,4 +5,9 @@ export const END_POINT = {
   BEST_FOODS: "best-foods",
   OUR_FOODS: "our-foods",
   BREADS: "breads",
+  PORKS: "porks",
+  ICE_CREAM: "ice-cream",
+  SANDWITCH: "sandwiches",
+  DESSERTS: "desserts",
+  LUNCH_BOX: "lunch-box",
 };
