@@ -18,11 +18,11 @@ const NavBar = () => {
         <LocationPicker />
       </div>
       <div className="grid grid-cols-5 gap-2">
-        {NavigationDataWeb.map((data) =>
+        {NavigationDataWeb.map((data, index) =>
           data.isNew ? (
-            <NewLabel menuData={data} />
+            <NewLabel menuData={data} key={index} />
           ) : (
-            <MenuItem menuData={data} />
+            <MenuItem menuData={data} key={index} />
           )
         )}
       </div>
