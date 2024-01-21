@@ -45,3 +45,19 @@ test("Find food should work", async () => {
   const card = screen.getAllByTestId("searchCard");
   expect(card.length).toBe(3);
 });
+
+test("top rated food should load", async () => {
+  await act(async () =>
+    render(
+      <BrowserRouter>
+        <SearchFood />
+      </BrowserRouter>
+    )
+  );
+
+  const topRatedButton = screen.getByRole("button", { name: "Top Rated" });
+  fireEvent.click(topRatedButton);
+
+  const card = screen.getAllByTestId("searchCard");
+  expect(card.length).toBe(15);
+});

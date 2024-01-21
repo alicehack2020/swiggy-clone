@@ -26,9 +26,14 @@ const SearchFood = () => {
     SetCopydata(find);
   };
 
+  const findTopRatedHanddler = () => {
+    let find = data.filter((food) => food.rate === 5);
+    SetCopydata(find);
+  };
+
   return (
     <div className="px-10">
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center space-x-2">
         <div className="flex gap-2 items-center  bg-green-500 rounded-md w-1/3">
           <input
             type="text"
@@ -44,11 +49,27 @@ const SearchFood = () => {
             onClick={findData}
           />
         </div>
+        <button
+          className="p-2 bg-orange-400 rounded-md text-white font-semibold"
+          onClick={findTopRatedHanddler}
+        >
+          Top Rated
+        </button>
+        <button
+          className="p-2 bg-red-400 rounded-md text-white font-semibold"
+          onClick={() => SetCopydata(data)}
+        >
+          Reset
+        </button>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-7 gap-4 mt-4">
         {copyData &&
           copyData?.map((foodData) => (
-            <div className="p-2 bg-gray-200 w-fit rounded-md" key={foodData.id}  data-testid="searchCard">
+            <div
+              className="p-2 bg-gray-200 w-fit rounded-md"
+              key={foodData.id}
+              data-testid="searchCard"
+            >
               <FoodCard food={foodData} />
             </div>
           ))}
