@@ -1,13 +1,21 @@
 import { StarIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { handleImageError } from "../../utils/Helpers";
+import { useNavigate } from "react-router-dom";
 
 const FoodCard = ({ food }) => {
   const { id, img, name, rate, dsc, country } = food;
+  const Navigate = useNavigate();
+
+  const NavigateHandle = (id) => {
+    Navigate(`food/${id}`);
+  };
+
   return (
     <div
       key={id}
-      className="h-full sm:w-52 w-40 flex flex-col gap-1 text-gray-500 hover:cursor-pointer hover:scale-95   "
+      className="h-full sm:w-52 w-40 flex flex-col gap-1 text-gray-500 hover:cursor-pointer hover:scale-95"
+      onClick={() => NavigateHandle(id)}
     >
       <div className="w-full   relative">
         <img

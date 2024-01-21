@@ -4,7 +4,6 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import FoodList from "./pages/FoodList";
-import FoodDetail from "./pages/FoodDetail";
 import ErrorPage from "./pages/ErrorPage";
 import SearchFood from "./pages/SearchFood";
 import AppLayout from "./layout/AppLayout";
@@ -20,12 +19,8 @@ const AppRouter = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "food",
-        element: <FoodList />,
-      },
-      {
         path: "food/:id",
-        element: <FoodDetail />,
+        element: <FoodList />,
       },
       {
         path: "foodsearch",
