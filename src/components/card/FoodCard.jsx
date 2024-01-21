@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const FoodCard = ({ food }) => {
   const { id, img, name, rate, dsc, country } = food;
+
   const Navigate = useNavigate();
 
   const NavigateHandle = (id) => {
