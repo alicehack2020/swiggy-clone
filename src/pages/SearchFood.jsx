@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const SearchFood = () => {
   return (
-    <div>SearchFood</div>
-  )
-}
+    <div>
+      <h1>SearchFood</h1>
+    </div>
+  );
+};
 
-export default SearchFood
+export default SearchFood;
