@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LocationPicker from "./LocationPicker";
 import { NavigationDataWeb } from "../utils/NavigationData";
 import MenuItem from "./menu/MenuItem";
-import WithNewLabel from "./hoc/withLabelNew";
+import WithNewLabel from "./hoc/WithNewLabel";
 import { HomeIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 const NavBar = () => {
