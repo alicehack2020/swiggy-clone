@@ -7,6 +7,9 @@ import FoodList from "./pages/FoodList";
 import ErrorPage from "./pages/ErrorPage";
 import SearchFood from "./pages/SearchFood";
 import AppLayout from "./layout/AppLayout";
+import appStore from "./redux/store";
+import { Provider } from "react-redux";
+import CartPage from "./pages/CartPage";
 
 const AppRouter = createBrowserRouter([
   {
@@ -27,6 +30,10 @@ const AppRouter = createBrowserRouter([
         element: <SearchFood />,
       },
       {
+        path: "cart",
+        element: <CartPage />,
+      },
+      {
         path: "*",
         element: <ErrorPage />,
       },
@@ -35,5 +42,7 @@ const AppRouter = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={AppRouter} />
+  <Provider store={appStore}>
+    <RouterProvider router={AppRouter} />
+  </Provider>
 );

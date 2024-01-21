@@ -1,5 +1,5 @@
 import React from "react";
-import { IMAGE_URL } from "../../utils/Constants";
+import AddFood from "./AddFood";
 
 const FoodAccordionCard = ({ foodData }) => {
   const { name, description, imageId, price } = foodData;
@@ -13,9 +13,8 @@ const FoodAccordionCard = ({ foodData }) => {
         </div>
         <p className="text-xs">{description}</p>
       </div>
-      <div>
-        <img src={IMAGE_URL + "/" + imageId} alt="" className="h-20 " />
-      </div>
+
+      <AddFood foodData={foodData} />
     </div>
   );
 };
