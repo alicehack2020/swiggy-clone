@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import LocationPicker from "./LocationPicker";
 import { NavigationDataWeb } from "../utils/NavigationData";
 import MenuItem from "./menu/MenuItem";
-import WithNewLabel from "./hoc/WithNewLabel";
 import { HomeIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import WithNewLabel from "./hoc/WithLabelNew";
 const NavBar = () => {
   const NewLabel = WithNewLabel(MenuItem);
   const [online, setOnline] = useState(true);
