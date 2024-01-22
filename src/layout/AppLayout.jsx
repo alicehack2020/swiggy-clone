@@ -5,6 +5,10 @@ import Footer from "../components/Footer.jsx";
 const AppLayout = () => {
   return (
     <div>
+      <div className="sticky top-0 z-10">
+        <Footer />
+      </div>
+
       <div>
         <NavBar />
       </div>
