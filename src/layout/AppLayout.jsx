@@ -1,12 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar.jsx";
-import Footer from "../components/Footer.jsx";
+import Warning from "../components/Warning.jsx";
 const AppLayout = () => {
   return (
     <div>
       <div className="sticky top-0 z-10">
-        <Footer />
+        <Warning />
       </div>
 
       <div>
@@ -17,7 +17,7 @@ const AppLayout = () => {
         <Outlet />
       </div>
       <div className=" w-full">
-        <Footer />
+        <Warning />
       </div>
     </div>
   );
