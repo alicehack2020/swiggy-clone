@@ -33,8 +33,8 @@ const SearchFood = () => {
 
   return (
     <div className="px-10">
-      <div className="w-full flex justify-center space-x-2">
-        <div className="flex gap-2 items-center  bg-green-500 rounded-md w-1/3">
+      <div className="w-full flex justify-center space-x-2 sticky top-10 z-10">
+        <div className="flex gap-2 items-center  bg-green-500 rounded-md w-1/3 s">
           <input
             type="text"
             placeholder="Search Food Name"
