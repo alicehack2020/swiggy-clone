@@ -1,15 +1,18 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
 import FoodList from "./pages/FoodList";
 import ErrorPage from "./pages/ErrorPage";
-import SearchFood from "./pages/SearchFood";
 import AppLayout from "./layout/AppLayout";
 import appStore from "./redux/store";
 import { Provider } from "react-redux";
 import CartPage from "./pages/CartPage";
+import HomePageShimmerUi from "./components/shimmerui/HomePageShimmerUi";
+import GridCardShimmerUI from "./components/shimmerui/GridCardShimmerUI";
+
+const Home = lazy(() => import("./pages/Home"));
+const SearchFood = lazy(() => import("./pages/SearchFood"));
 
 const AppRouter = createBrowserRouter([
   {
@@ -19,7 +22,11 @@ const AppRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: (
+          <Suspense fallback={<HomePageShimmerUi />}>
+            <Home />
+          </Suspense>
+        ),
       },
       {
         path: "food/:id",
@@ -27,7 +34,11 @@ const AppRouter = createBrowserRouter([
       },
       {
         path: "foodsearch",
-        element: <SearchFood />,
+        element: (
+          <Suspense fallback={<GridCardShimmerUI />}>
+            <SearchFood />
+          </Suspense>
+        ),
       },
       {
         path: "cart",
