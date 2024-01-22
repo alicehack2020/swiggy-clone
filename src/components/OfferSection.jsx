@@ -16,8 +16,8 @@ const OfferSection = ({ offer }) => {
         </div>
       </div>
       <div className="flex gap-4">
-        {offer.map((offerData) => (
-          <DiscountCard offer={offerData.info} />
+        {offer.map((offerData, index) => (
+          <DiscountCard offer={offerData.info} key={index} />
         ))}
       </div>
     </div>

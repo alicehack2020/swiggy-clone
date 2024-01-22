@@ -8,7 +8,7 @@ const FoodAccordion = ({ accordionData, title }) => {
   return (
     <div className="py-2 bg-gray-100">
       <div className="p-2 space-y-2 bg-white" onClick={() => setIsOpen(!isOpen)}>
-        <h1 className="font-bold text-lg text-gray-800">{title}</h1>
+        <h1 className="font-bold text-lg text-gray-800" data-testid="accordionTitle">{title}</h1>
         <div className="flex justify-between hover:cursor-pointer">
           <h2 className="text-base"> Veg ({accordionData?.length})</h2>
           <ChevronUpIcon

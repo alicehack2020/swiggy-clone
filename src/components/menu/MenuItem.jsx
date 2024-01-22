@@ -15,7 +15,7 @@ const MenuItem = ({ menuData }) => {
         >
           <div className="h-6 w-6">{icon}</div>
           <h1>{label}</h1>
-          <p>{cartItems && cartItems.length}</p>
+          <p data-testid="cartItemCount">{cartItems && cartItems.length}</p>
         </Link>
       ) : (
         <Link
