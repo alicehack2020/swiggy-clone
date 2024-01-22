@@ -16,7 +16,7 @@ export const NavigationDataWeb = [
   {
     label: "Offers",
     icon: <ReceiptPercentIcon />,
-    href: "/foodsearch",
+    href: "/offers",
     isNew: true,
   },
   {

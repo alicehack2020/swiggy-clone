@@ -5,11 +5,16 @@ import Footer from "../components/Footer.jsx";
 const AppLayout = () => {
   return (
     <div>
-      <NavBar />
-      <div className="mt-4 mx-2 sm:mx-20">
+      <div>
+        <NavBar />
+      </div>
+
+      <div className="mt-4 mx-2 sm:mx-20 ">
         <Outlet />
       </div>
-      <Footer />
+      <div className=" w-full">
+        <Footer />
+      </div>
     </div>
   );
 };
