@@ -49,8 +49,9 @@ const FoodList = () => {
 
       <OfferSection offer={offers} />
 
-      {accordionData.map((menu) => (
+      {accordionData.map((menu, index) => (
         <FoodMenu
+          key={index}
           accordionData={menu.card.card.itemCards}
           title={menu.card.card.title}
         />

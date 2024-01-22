@@ -7,7 +7,6 @@ const AddFood = ({ foodData }) => {
   const { imageId } = foodData;
   const dispatch = useDispatch();
   const addFoodHanddler = () => {
-    console.log("foodData", foodData);
     dispatch(addItem(foodData));
   };
   const removeFoodHanddler = () => {
@@ -19,8 +18,9 @@ const AddFood = ({ foodData }) => {
       <img src={IMAGE_URL + "/" + imageId} alt="" className="h-20 " />
       <div className="py-1 bg-black text-white rounded-lg w-20 absolute bottom-1 right-1 border border-gray-200 flex justify-evenly ">
         <button onClick={removeFoodHanddler}>-</button>
-        <button onClick={addFoodHanddler}>add</button>
-        <button onClick={addFoodHanddler}>+</button>
+        <button onClick={addFoodHanddler} data-testid="addFood">
+          add +
+        </button>
       </div>
     </div>
   );
