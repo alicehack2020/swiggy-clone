@@ -15,8 +15,6 @@ const cartSlice = createSlice({
         state.items.push(action.payload);
       } else if (state.items.length === 0) {
         state.items.push(action.payload);
-      } else {
-        alert("already added");
       }
     },
     removeItem: (state, action) => {
@@ -28,13 +26,11 @@ const cartSlice = createSlice({
         state.items = state.items.filter(
           (data) => data.id !== action.payload.id
         );
-        alert("removed Food");
       }
     },
     clearCart: (state) => {
       if (state.items.length !== 0) {
         state.items.length = 0;
-        alert("all food removed from cart");
       }
     },
   },

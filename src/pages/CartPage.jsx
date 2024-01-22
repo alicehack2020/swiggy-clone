@@ -21,8 +21,8 @@ const CartPage = () => {
         clear
       </button>
       <div>
-        {cartItems.map((foodData) => (
-          <FoodAccordionCard foodData={foodData} />
+        {cartItems.map((foodData, index) => (
+          <FoodAccordionCard foodData={foodData} key={index} />
         ))}
       </div>
     </div>

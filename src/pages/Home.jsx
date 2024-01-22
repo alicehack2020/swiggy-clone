@@ -3,6 +3,9 @@ import useFeatchData from "../hook/useFeatchData";
 import { END_POINT } from "../utils/Constants";
 import HeroCard from "../components/card/HeroCard";
 import FoodCard from "../components/card/FoodCard";
+import HeroShimmerUi from "../components/shimmerui/HeroShimmerUi";
+import LocationCardShimmerUI from "../components/shimmerui/LocationCardShimmerUI";
+import GridCardShimmerUI from "../components/shimmerui/GridCardShimmerUI";
 
 const Home = () => {
   const { foodData: heroFood } = useFeatchData(END_POINT.BEST_FOODS);
